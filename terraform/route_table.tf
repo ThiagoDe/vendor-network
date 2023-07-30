@@ -2,7 +2,7 @@
 resource "aws_route_table" "public_1" {
   vpc_id = aws_vpc.vpc.id
   tags = {
-    Name = "${var.app_nama}-rt-public-1"
+    Name = "${var.app_name}-rt-public-1"
   }
 }
 
@@ -15,7 +15,7 @@ resource "aws_route" "public_1" {
 
 resource "aws_route_table_association" "public_1" {
     subnet_id = aws_subnet.public_1.id 
-    route_table_id = aws_route_table.public_1
+    route_table_id = aws_route_table.public_1.id
   
 }
 
@@ -23,7 +23,7 @@ resource "aws_route_table_association" "public_1" {
 resource "aws_route_table" "public_2" {
   vpc_id = aws_vpc.vpc.id
   tags = {
-    Name = "${var.app_nama}-rt-public-2"
+    Name = "${var.app_name}-rt-public-2"
   }
 }
 
@@ -36,7 +36,7 @@ resource "aws_route" "public_2" {
 
 resource "aws_route_table_association" "public_2" {
     subnet_id = aws_subnet.public_2.id 
-    route_table_id = aws_route_table.public_2
+    route_table_id = aws_route_table.public_2.id 
   
 }
 
@@ -44,7 +44,7 @@ resource "aws_route_table_association" "public_2" {
 resource "aws_route_table" "private_1" {
   vpc_id = aws_vpc.vpc.id
   tags = {
-    Name = "${var.app_nama}-rt-private-1"
+    Name = "${var.app_name}-rt-private-1"
   }
 }
 
@@ -64,7 +64,7 @@ resource "aws_route_table_association" "private_1" {
 resource "aws_route_table" "private_2" {
   vpc_id = aws_vpc.vpc.id
   tags = {
-    Name = "${var.app_nama}-rt-private-2"
+    Name = "${var.app_name}-rt-private-2"
   }
 }
 
